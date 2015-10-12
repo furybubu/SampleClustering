@@ -1,4 +1,4 @@
-SAMPLE CLUSTERING
+<h1>SAMPLE CLUSTERING</h1>
 
 Here is a project for clustering a set of samples composed of colored regions based on their similarity.
 To tackle this problem, I decided to rely on the distance between samples since it is inversely correlated to similarity and
