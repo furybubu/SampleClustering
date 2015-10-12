@@ -1,9 +1,9 @@
 <h1>Sample Clustering</h1>
 
-<p>Here is a project for clustering a set of samples composed of colored regions based on their similarity.
+<p>Here is a project aiming at clustering a set of samples composed of colored regions based on their similarity.<br/>
 To tackle this problem, I decided to rely on the distance between samples since it is inversely correlated to similarity and
- most popular clustering approaches rely on the existence of a distance matrix.
- The program can be runned using the main method in the SampleClustring class as the entry point.</p>
+ most popular clustering approaches use this measure under the form of distance matrices.
+ The program can be runned using the main method in the SampleClustering class as the entry point, where you fill find some useful comments and examples.</p>
  
 <p><b>1.</b> My distance measure here is based on the analysis of the colors of each region using the HSV (Hue,Saturation.Value) model. This color model is 
 known to be a more perceptually relevant than the usual RGB color model because it separates the hue information from the brightness.
