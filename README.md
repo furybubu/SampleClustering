@@ -5,7 +5,7 @@ To tackle this problem, I decided to rely on the distance between samples since 
  most popular clustering approaches rely on the existence of a distance matrix.
  The program can be runned using the main method in the SampleClustring class as the entry point.</p>
  
-<p> My distance measure here is based on the analysis of the colors of each region using the HSV (Hue,Saturation.Value) model. This color model is 
+<p><b>1.</b> My distance measure here is based on the analysis of the colors of each region using the HSV (Hue,Saturation.Value) model. This color model is 
 known to be a more perceptually relevant than the usual RGB color model because it separates the hue information from the brightness.
 Other models actually outperform the HSV model in that sense, but these require a higher complexity that is probably unnecessary for the study case presented here
 (Just for information, I included the class ColorUtil that implements such a model, the L*a*b model, and that can be easily used as a replacement to our HSV-based approach).</p>
@@ -15,11 +15,12 @@ The "color distance" between two SampleElements is the core of my distance measu
 the euclidean distance between the colors of two SampleElements will translate into their individual distance (For the sake of clarity, I approximated the 
 differences found in the Hue channel, where colors with different Hue values are considered to be equidistant along the Hue axis).
 Hence, the distance between two samples is the average distance between their respective SampleElements.
-<p>
-2. The implementation of the distance measure is found in the SampleElement class under the method called calcDistance. 
 </p>
 <p>
-3. For the clustering step, I opted for the Neighbor Joining method, a popular approach in the field of phylogenetics. It is a bottom-up agglomerative hierarchical clustering method that requires a distance matrix as a starting point. Based on the pairwise distances of the samples, the algorithm recursively merges the two most similar or "neighboring" nodes(in this context the two most similar samples),
+<b>2.</b> The implementation of the distance measure is found in the SampleElement class under the method called calcDistance. 
+</p>
+<p>
+<b>3.</b> For the clustering step, I opted for the Neighbor Joining method, a popular approach in the field of phylogenetics. It is a bottom-up agglomerative hierarchical clustering method that requires a distance matrix as a starting point. Based on the pairwise distances of the samples, the algorithm recursively merges the two most similar or "neighboring" nodes(in this context the two most similar samples),
 until the whole tree including all nodes is built.
 Like most agglomerative clustering methods, The complexity of the NJ method is polynomial, but this is not problematic for such a small dataset. 
 </p>
